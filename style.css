@@ -1,0 +1,130 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main{
+    -webkit-box-shadow: 0px 0px 22px -4px #ddd; 
+    box-shadow: 0px 0px 22px -4px #ddd;
+    border-radius: 10px;
+    min-height: 70vh;
+    min-width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#screen{
+    position: relative;
+    display: flex;
+    align-items: space-around;
+    border: 1.5px solid #ddd;
+    border-radius: 5px;
+    min-height: 100px;
+    min-width: 450px;
+    margin: 25px auto;
+    font-size: 40px;
+    display: flex;
+    text-align: right;
+    align-items: center;
+}
+#hint-text{
+    position: absolute;
+    width: max-content;
+    font-size: 15.5px;
+    top: -55px;
+}
+#screen:hover{
+    box-shadow: 0px 0px 22px -4px #ddd;
+}
+#button-div{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 15px;
+    padding: 50px;
+}
+#equal-btn{
+    grid-column: 4/5;
+    grid-row: 5/6;
+    justify-self: center;
+    width: 50px;
+    height: 50px;
+    background: #4d90fe;
+    border-radius: 50%;
+}
+#equal-btn:hover{
+    background: #307CF9;
+}
+#clear-btn{
+    grid-column: 4/5;
+    grid-row: 4/5;
+}
+.btn-brac-1{
+    grid-column: 4/5;
+    grid-row: 2/3;
+}
+.btn-brac-2{
+    grid-column: 4/5;
+    grid-row: 3/4;
+}
+.btn{
+    box-shadow: none;
+    height: 50px;
+    width: 100px;
+    background-color: #f9f9f9;
+    border: 0.5px solid #ddd;
+    border-radius: 5px;
+    font-size: 25px;
+}
+.btn:hover{
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+.btn-oper{
+    background-color: #ddd;
+    border: 1.5px solid #bbb;
+}
+#delete-btn{
+    font-size: 20px;
+}
+
+
+
+
+@media(max-width: 700px) {
+    #main{
+        min-width: 250px;
+        min-height: 450px;
+    }
+    #screen{
+        min-width: 175px;
+        min-height: 75px;
+        font-size: 25px;
+    }
+    #hint-text{
+        font-size: 8.5px;
+        top: -75px;
+    }
+    #button-div{
+        margin: 2.5px;
+        padding: 15px;
+        gap: 15px;
+    }
+    .btn{
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    #equal-btn{
+        width: 35px;
+        height: 35px;
+    }
+    #delete-btn{
+        font-size: 8.5px;
+    }
+}
