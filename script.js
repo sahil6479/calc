@@ -150,7 +150,9 @@ function clickOnParen(e){
     } else{
         if(e.path[0].textContent == "("){
             hintText.textContent = 'Please Enter operator "+,-,×,÷" before parenthesis"()"';
-        } else if(e.path[0].textContent == ")"){
+        } else if(e.path[0].textContent == ")" && word == "("){
+            hintText.textContent = 'Enter something in the parenthesis'
+        } else if(e.path[0].textContent == ")" && word != "("){
             hintText.textContent = "";
             word = e.path[0].textContent;
             equationForScreen += word;
