@@ -132,11 +132,11 @@ function clickOnAddAndSub(e){
 }
 function clickOnParen(e){
     if(word == "+" || word == "-" || word == "÷" || word == "×" || word == ""){
-        hintText.textContent = "";
-        word = e.path[0].textContent;
-        equationForScreen += word;
-        makeEquation(word);
-        if(word == "("){
+        if(e.path[0].textContent == "("){
+            hintText.textContent = "";
+            word = e.path[0].textContent;
+            equationForScreen += word;
+            makeEquation(word);
             paresCheck += 1;
             for(let x of arrForOperator){
             btn[x].removeEventListener("click", clickOnOper);
@@ -144,11 +144,8 @@ function clickOnParen(e){
             for(let x of arrForAddAndSub){
                 btn[x].addEventListener("click", clickOnAddAndSub);
             }
-        } else if(word == ")"){
-            paresCheck -= 1;
-            for(let x of arrForOperator){
-            btn[x].addEventListener("click", clickOnOper);
-            }
+        } else if(e.path[0].textContent == ")"){
+            hintText.textContent = 'Enter number before parenthesis"()"';
         }
     } else{
         if(e.path[0].textContent == "("){
