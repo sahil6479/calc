@@ -13,6 +13,7 @@ let equation = 0;
 let equationForScreen = "";
 let result = 0;
 let paresCheck = 0;
+let lastWord = "";
 
 
 let arrForNum = [4,5,6,7,8,9,10,11,12,13,14];
@@ -57,7 +58,12 @@ function equal(){
 }
 function deleteFn(){
     hintText.textContent = "";
-    content.pop();
+    lastWord = content.pop();
+    if(lastWord == "("){
+        paresCheck -= 1;
+    } else if(lastWord == ")"){
+        paresCheck += 1;
+    }
     word = content.pop();
     equationForScreen = equationForScreen.split("");
     equationForScreen.pop();
